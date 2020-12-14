@@ -1,15 +1,12 @@
-let inputX1 = document.querySelector('#inputX1');
-let inputX2 = document.querySelector('#inputX2');
-let inputY1 = document.querySelector('#inputY1');
-let inputY2 = document.querySelector('#inputY2');
-let button = document.querySelector('#btn');
-let result = document.querySelector('.result');
+// let button = document.querySelector('#btn');
 
-button.onclick = function() {
-    let x1 = +inputX1.value;
-    let x2 = +inputX2.value;
-    let y1 = +inputY1.value;
-    let y2 = +inputY2.value;
+function f1() {
+    let x1 = +document.getElementById('inputX1').value;
+    let x2 = +document.querySelector('#inputX2').value;
+    let y1 = +document.querySelector('#inputY1').value;
+    let y2 = +document.getElementById('inputY2').value;
+    let result = document.querySelector('.result');
+
     let s = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     let cos;
 
@@ -21,9 +18,11 @@ button.onclick = function() {
      
     cos = [0 | cos, '° ', 0|(cos < 0 ? cos = -cos : cos) % 1 * 60, "' ", 0 | cos * 60 % 1 * 60, '"'].join('');
     // result.innerHTML = `S = ${s.toFixed(3)}  a = ${cos}`;
-    result.innerHTML = 'S = ' + s.toFixed(3) + '\n' + 'a = ' + cos; 
+    result.innerHTML = 'S = ' + s.toFixed(3) + '\n' + 'α = ' + cos; 
     // result.innerHTML += `a = ${cos}`;
 }
+
+document.querySelector('#btn').onclick = f1;
 
 // function сonvertDDToDMS(D){
 //     return [0|D, '° ', 0|(D<0?D=-D:D)%1*60, "' ", 0|D*60%1*60, '"'].join('');
