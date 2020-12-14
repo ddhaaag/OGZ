@@ -20,7 +20,9 @@ button.onclick = function() {
      }
      
     cos = [0 | cos, '° ', 0|(cos < 0 ? cos = -cos : cos) % 1 * 60, "' ", 0 | cos * 60 % 1 * 60, '"'].join('');
-    result.innerHTML = `S = ${s.toFixed(3)} a = ${cos}`;
+    // result.innerHTML = `S = ${s.toFixed(3)}  a = ${cos}`;
+    result.innerHTML = 'S = ' + s.toFixed(3) + '\n' + 'a = ' + cos; 
+    // result.innerHTML += `a = ${cos}`;
 }
 
 // function сonvertDDToDMS(D){
