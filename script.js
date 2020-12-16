@@ -49,8 +49,8 @@ function updateResult() {
     // let α = getDirectionalAngle();
     // let transitFromDeg = [0 | α, '° ', 0|(α < 0 ? α = -α : α) % 1 * 60, "' ", 0 | α * 60 % 1 * 60, '"'].join('');
     // result.textContent = 'S = ' + s.toFixed(3) + '\n' + 'α = ' + transitFromDeg; 
-    result.textContent = `${showResultS()} ${showResultα()}`;
-    
+    result.textContent = `${showResultS()}`;
+    alpha_result.textContent = `${showResultα()}`;
 }
 
 function showResultS() {
@@ -61,7 +61,7 @@ function showResultS() {
 function showResultα() {
     let α = getDirectionalAngle();
     let transitFromDeg = [0 | α, '° ', 0|(α < 0 ? α = -α : α) % 1 * 60, "' ", 0 | α * 60 % 1 * 60, '"'].join('');
-    return result.textContent = 'α = ' + transitFromDeg;
+    return alpha_result.textContent = 'α = ' + transitFromDeg;
 }
 
 function getHorizontalDistance() {
@@ -113,8 +113,11 @@ function getNumberY2() {
 
 let inputs = document.querySelectorAll('input');
 let result = document.querySelector('.result');
+let alpha_result = document.querySelector('.alpha_result');
 let button = document.querySelector('#btn');
 button.addEventListener('click', onClick);
+// button.addEventListener('click', showResultS);
+// button.addEventListener('click', showResultα);  
 
 
 

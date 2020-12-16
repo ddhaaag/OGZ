@@ -10,6 +10,8 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 input[type="number"] {
@@ -29,7 +31,7 @@ input[type="number"] {
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
-    margin-top: 10px;
+    margin-top: 0.625rem;
     cursor: pointer;
     transition: background-color .75s ease;
 }
@@ -39,7 +41,7 @@ input[type="number"] {
     background-color: #fff;
 }
 
-.result {
+.result, .alpha_result {
     margin-top: 25px;
     font-size: 2.5rem;
     color: rgb(247, 7, 7);
@@ -47,9 +49,54 @@ input[type="number"] {
     /* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.75); */
 }
 
+
+
 @media screen and (max-width: 550px) {
     input {
         width: 265px;
+    }
+
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+
+    .result, .alpha_result {
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
+
+    #btn {
+        margin-top: 2rem;
+    }
+    
+  }
+
+  @media screen and (max-width: 320px) {
+    input {
+        width: 230px;
+    }
+
+    input[type="number"] {
+        font-size: 2rem;
+    } 
+
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container label {
+        font-size: 1.5rem;
+    }
+
+    .result, .alpha_result {
+        margin-top: 2.5rem;
+        font-size: 2rem;
+    }
+
+    #btn {
+        margin-top: 3rem;
     }
     
   }
