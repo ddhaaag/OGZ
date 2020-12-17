@@ -30,7 +30,7 @@
 // 2-й способ
 function onClick() {
     if (checkInputsEmpty()) {
-        return result.textContent = `Заполните, пожалуйста, все поля!!!`;
+        return result_empty.textContent = `Заполните, пожалуйста, все поля!!!`;
     } else {
         updateResult();
     }
@@ -55,13 +55,13 @@ function updateResult() {
 
 function showResultS() {
     let s = getHorizontalDistance();
-    return result.textContent = 'S = ' + s.toFixed(3);
+    return result.textContent = s.toFixed(3);
 }
 
 function showResultα() {
     let α = getDirectionalAngle();
     let transitFromDeg = [0 | α, '° ', 0|(α < 0 ? α = -α : α) % 1 * 60, "' ", 0 | α * 60 % 1 * 60, '"'].join('');
-    return alpha_result.textContent = 'α = ' + transitFromDeg;
+    return alpha_result.textContent = transitFromDeg;
 }
 
 function getHorizontalDistance() {
@@ -113,12 +113,18 @@ function getNumberY2() {
 
 let inputs = document.querySelectorAll('input');
 let result = document.querySelector('.result');
+let result_empty = document.querySelector('.result_empty');
 let alpha_result = document.querySelector('.alpha_result');
 let button = document.querySelector('#btn');
 button.addEventListener('click', onClick);
-// button.addEventListener('click', showResultS);
-// button.addEventListener('click', showResultα);  
+button.addEventListener('click', showOut);
 
+
+let elem = document.querySelector('.hidden');
+function showOut() {
+    elem.classList.toggle('hidden');
+    elem.classList.toggle('show');
+} 
 
 
 
