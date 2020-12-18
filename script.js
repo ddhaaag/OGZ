@@ -28,6 +28,7 @@
 
 
 // 2-й способ
+
 function onClick() {
     if (checkInputsEmpty()) {
         return result_empty.textContent = `Заполните, пожалуйста, все поля!!!`;
@@ -131,3 +132,9 @@ function showOut() {
 //function сonvertDDToDMS(D){
 //     return [0|D, '° ', 0|(D<0?D=-D:D)%1*60, "' ", 0|D*60%1*60, '"'].join('');
 // }
+
+let val;
+
+let birthday = new Date('03-29-1994');
+val = birthday;
+console.log(val);

@@ -44,16 +44,16 @@ input[type="number"] {
 .result, .alpha_result {
     margin-top: 25px;
     font-size: 2.5rem;
-    color: rgb(247, 7, 7);
-    font-weight: 900;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
     /* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.75); */
 }
 
 .result_empty {
     margin-top: 25px;
     font-size: 2.5rem;
-    color: rgb(247, 7, 7);
-    font-weight: 900;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
     /* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.75); */
 }
 
