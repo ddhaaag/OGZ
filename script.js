@@ -29,27 +29,112 @@
 
 // 2-й способ
 
+// function onClick() {
+//     if (checkInputsEmpty()) {
+//         return result_empty.textContent = `Заполните, пожалуйста, все поля!!!`;
+//     } else {
+//         updateResult();
+//     }
+// }
+
+// function checkInputsEmpty() {
+//     if (getNumberX1() === '' || getNumberY1() === '' || getNumberX2() === '' || getNumberY2() === '') {
+//         return true;
+//     }   else {
+//         return false;
+//     }
+// }
+
+// function updateResult() {
+//    (3) + '\n' + 'α = ' + transitFromDeg; 
+//     result.textContent = `${showResultS()}`;
+//     alpha_result.textContent = `${showResultα()}`;
+// }
+
+// function showResultS() {
+//     let s = getHorizontalDistance();
+//     return result.textContent = s.toFixed(3);
+// }
+
+// function showResultα() {
+//     let α = getDirectionalAngle();
+//     let transitFromDeg = [0 | α, '° ', 0|(α < 0 ? α = -α : α) % 1 * 60, "' ", 0 | α * 60 % 1 * 60, '"'].join('');
+//     return alpha_result.textContent = transitFromDeg;
+// }
+
+// function getHorizontalDistance() {
+//     return Math.sqrt(Math.pow(getDeltaX(), 2) + Math.pow(getDeltaY(), 2));
+// }
+
+// function getDeltaX() {
+//     let x1 = getNumberX1();
+//     let x2 = getNumberX2();
+//     return x2 - x1;
+// }
+
+// function getDeltaY() {
+//     let y1 = getNumberY1();
+//     let y2 = getNumberY2();
+//     return y2 - y1;
+// }
+
+
+// function getDirectionalAngle() {
+//     let y1 = getNumberY1();
+//     let y2 = getNumberY2();
+//     let x1 = getNumberX1();
+//     let x2 = getNumberX2();
+//     let s = getHorizontalDistance();
+
+//     if ((y1 - y2) <= 0) {
+//         return (180 / Math.PI) * (Math.acos((x2 - x1) / s));
+//     } else {
+//         return (180 / Math.PI) * (Math.acos((x2 - x1) / s)) * - 1 + 360;
+//     }
+// } 
+
+// function getNumberX1() {
+//     return inputs[0].value;
+// }
+
+// function getNumberY1() {
+//     return inputs[1].value;
+// }
+
+// function getNumberX2() {
+//     return inputs[2].value;
+// }
+
+// function getNumberY2() {
+//     return inputs[3].value;
+// }
+
+// let inputs = document.querySelectorAll('input');
+// let result = document.querySelector('.result');
+// let result_empty = document.querySelector('.result_empty');
+// let alpha_result = document.querySelector('.alpha_result');
+// let button = document.querySelector('#btn');
+// button.addEventListener('click', onClick);
+// button.addEventListener('click', showOut);
+
+// let elem = document.querySelector('.hidden');
+// function showOut() {
+//     elem.classList.add('show');
+// } 
+
+
+// 3-й способ 
+
+
+// const form = document.querySelector('form');
+
+// form.addEventListener('submit', runEvent);
+
+
+
+
 function onClick() {
-    if (checkInputsEmpty()) {
-        return result_empty.textContent = `Заполните, пожалуйста, все поля!!!`;
-    } else {
-        updateResult();
-    }
-}
-
-function checkInputsEmpty() {
-    if (getNumberX1() === '' || getNumberY1() === '' || getNumberX2() === '' || getNumberY2() === '') {
-        return true;
-    }   else {
-        return false;
-    }
-}
-
-function updateResult() {
-    // let s = getHorizontalDistance();
-    // let α = getDirectionalAngle();
-    // let transitFromDeg = [0 | α, '° ', 0|(α < 0 ? α = -α : α) % 1 * 60, "' ", 0 | α * 60 % 1 * 60, '"'].join('');
-    // result.textContent = 'S = ' + s.toFixed(3) + '\n' + 'α = ' + transitFromDeg; 
+    document.getElementById('form').addEventListener('submit', showOut);
     result.textContent = `${showResultS()}`;
     alpha_result.textContent = `${showResultα()}`;
 }
@@ -57,12 +142,6 @@ function updateResult() {
 function showResultS() {
     let s = getHorizontalDistance();
     return result.textContent = s.toFixed(3);
-}
-
-function showResultα() {
-    let α = getDirectionalAngle();
-    let transitFromDeg = [0 | α, '° ', 0|(α < 0 ? α = -α : α) % 1 * 60, "' ", 0 | α * 60 % 1 * 60, '"'].join('');
-    return alpha_result.textContent = transitFromDeg;
 }
 
 function getHorizontalDistance() {
@@ -81,6 +160,11 @@ function getDeltaY() {
     return y2 - y1;
 }
 
+function showResultα() {
+    let α = getDirectionalAngle();
+    let transitFromDeg = [0 | α, '° ', 0|(α < 0 ? α = -α : α) % 1 * 60, "' ", 0 | α * 60 % 1 * 60, '"'].join('');
+    return alpha_result.textContent = transitFromDeg;
+}
 
 function getDirectionalAngle() {
     let y1 = getNumberY1();
@@ -96,18 +180,19 @@ function getDirectionalAngle() {
     }
 } 
 
-function getNumberX1() {
-    return inputs[1].value;
-}
 
+function getNumberX1() {
+    return inputs[0].value;
+}
+    
 function getNumberY1() {
     return inputs[1].value;
 }
-
+    
 function getNumberX2() {
-    return inputs[2].value;
+    return inputs[2].value;// document.getElementById('form').addEventListener('submit', showOut);
 }
-
+    
 function getNumberY2() {
     return inputs[3].value;
 }
@@ -118,23 +203,11 @@ let result_empty = document.querySelector('.result_empty');
 let alpha_result = document.querySelector('.alpha_result');
 let button = document.querySelector('#btn');
 button.addEventListener('click', onClick);
-button.addEventListener('click', showOut);
+// button.addEventListener('submit', showOut);
 
-
+// Добавляем на страницу и убираем действие по дефолту submit
 let elem = document.querySelector('.hidden');
-function showOut() {
-    elem.classList.toggle('hidden');
-    elem.classList.toggle('show');
+function showOut(e) {
+    elem.classList.add('show');
+    e.preventDefault();
 } 
-
-
-
-//function сonvertDDToDMS(D){
-//     return [0|D, '° ', 0|(D<0?D=-D:D)%1*60, "' ", 0|D*60%1*60, '"'].join('');
-// }
-
-let val;
-
-let birthday = new Date('03-29-1994');
-val = birthday;
-console.log(val);

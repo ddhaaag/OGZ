@@ -9,14 +9,59 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Обратная геодезическая задача</h1>
 
+    <div class="container">
+        <h1>Обратная геодезическая задача</h1>
+        <form id="form">
+            <h2>Исходная точка 1</h2> 
+                <div class="pointX1">
+                    <label for="inputX1">X<sub>1</sub></label>
+                    <input id="inputX1" type="number" name="inputX1" value="" required>
+                </div>
+                <div class="pointY1">
+                    <label for="inputY1">Y<sub>1</sub></label>
+                    <input id="inputY1" type="number" name="inputY1" value="" required>
+                </div>
+                              
+        
+            <h2>Исходная точка 2</h2>   
+                <div class="pointX2">
+                    <label for="inputX2">X<sub>2</sub></label>
+                    <input id="inputX2" type="number" name="inputX2" value="" required>
+                </div>
+                <div class="pointY2">
+                    <label for="inputY2">Y<sub>2</sub></label>
+                    <input id="inputY2" type="number" name="inputY2" value="" required>
+                </div>
+      
+          
+            <input id="btn" type="submit" value="Вычислить">
+        </form>
+            <!-- <div class="result_empty"> -->
+                <table class="hidden result_empty">
+                    <tbody>
+                        <tr>
+                            <td>S</td>
+                            <td class="result"></td>
+                        </tr>
+                        <tr>
+                            <td>α</td>
+                            <td class="alpha_result"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            <!-- <div -->
+    </div> 
+         
+    
+
+    <!-- <h1>Обратная геодезическая задача</h1>
     <div class="container">
         <h2>Исходная точка 1</h2>
         <div class="point1">
             <div class="pointX1">
                 <label for="inputX1">X<sub>1</sub></label>
-                <input id="inputX1" type="number" name="inputX1" value="">
+                <input id="inputX1" type="number" name="inputX1" value="" required>
             </div>
             <div class="pointY1">
                 <label for="inputY1">Y<sub>1</sub></label>
@@ -34,8 +79,9 @@
                 <input id="inputY2" type="number" name="inputY2" value="" required>
             </div>
         </div>
-        <div><button id="btn">Вычислить</button></div>
-        <div class="result_empty">
+        <div><button id="btn">Вычислить</button></div> -->
+        <!-- <input id="btn" type="submit" value="Вычислить"> -->
+        <!-- <div class="result_empty">
             <table class="hidden">
                 <tbody>
                     <tr>
@@ -48,9 +94,9 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
         <!-- <div class="alpha_result"></div> -->
-    </div>
+    <!-- </div> -->
 
 
 </body>
